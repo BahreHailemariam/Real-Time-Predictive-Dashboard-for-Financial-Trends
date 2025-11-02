@@ -86,3 +86,14 @@ Power BI Dashboard → Real-Time KPIs & Forecast Visuals → Alerts & Notificati
 
 ---
 
+## 🧮 Example KPIs & Metrics
+- **Predicted Closing Price**
+- **Volatility Index (VIX)**
+- **Daily Gain/Loss %**
+- **Prediction Error (RMSE)**
+- **Moving Average Crossover Alerts**
+
+---
+
+## 📁 Project Structure
+
