@@ -241,3 +241,16 @@ DIVIDE(
 ```
 
 ---
+### 🧭 Interactivity & Alerts
+- Slicers: Date, Stock, Sector
+- Drillthrough Pages: Overview → Risk → Forecast
+- Tooltips for contextual KPIs
+- Auto Refresh via Power BI Service + SQL Agent
+- Email Alerts on deviation > ±3% or low accuracy
+
+---
+
+### 📊 Insights Delivered
+- Detects short-term investment opportunities
+- Highlights sector volatility and performance risk
+- AI-driven predictive and anomaly-based intelligence
