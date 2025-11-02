@@ -169,8 +169,9 @@ requests
 ### 🏦 1. Market Overview
 **Objective:** Provide a snapshot of key market indicators, stock performance, and financial health.
 
-**Key Visuals:**
-📊 KPI Cards:
+**Key Visuals:** <br />
+
+**📊 KPI Cards:**
 
   - Total Market Cap
 
@@ -178,11 +179,11 @@ requests
 
   - Overall Gain/Loss %
 
-📈 Line Chart: Daily closing prices of major indices (S&P 500, NASDAQ, Dow Jones).
+**📈 Line Chart:** Daily closing prices of major indices (S&P 500, NASDAQ, Dow Jones).
 
-💹 Treemap: Sector performance (Technology, Healthcare, Finance, etc.).
+**💹 Treemap:** Sector performance (Technology, Healthcare, Finance, etc.).
 
-🧭 Heatmap: Daily or hourly stock performance changes by sector.
+**🧭 Heatmap:** Daily or hourly stock performance changes by sector.
 **Business Questions:**
 - Which sectors outperform the market?
 - What’s the portfolio return rate today?
@@ -203,13 +204,14 @@ AVERAGE('StockData'[Volume])
 **Objective:** Forecast stock prices, index values, or portfolio returns.
 
 **Key Visuals:**
-- 🔁 Forecast Line Chart: Actual vs. Predicted Closing Price over time.
 
-- 📊 Confidence Interval Ribbon: Prophet or ARIMA forecast with upper/lower bounds.
+- **🔁 Forecast Line Chart:** Actual vs. Predicted Closing Price over time.
 
-- 🧩 Dynamic Filter: Choose specific tickers or forecast periods (1 day, 7 days, 30 days).
+- **📊 Confidence Interval Ribbon:** Prophet or ARIMA forecast with upper/lower bounds.
 
-- 📋 Table View: Displays predicted values alongside actuals and errors (RMSE, MAPE).
+- **🧩 Dynamic Filter:** Choose specific tickers or forecast periods (1 day, 7 days, 30 days).
+
+- **📋 Table View:** Displays predicted values alongside actuals and errors (RMSE, MAPE).
 
 **Metrics Displayed:**
 
@@ -246,13 +248,13 @@ Forecast Accuracy (%) =
 **Objective:** Assess portfolio risk via volatility and dispersion.
 
 **Key Visuals:**
-- 📉 Line Chart: Rolling standard deviation of closing prices.
+- **📉 Line Chart:** Rolling standard deviation of closing prices.
 
-- 📊 Bar Chart: Comparison of volatility across stocks/sectors.
+- **📊 Bar Chart:** Comparison of volatility across stocks/sectors.
 
-- 💡 Variance Gauge: Measures deviation from mean performance.
+- **💡 Variance Gauge:** Measures deviation from mean performance.
 
-- 🧾 Scatter Plot: Risk vs. Return relationship (Sharpe ratio analysis).
+- **🧾 Scatter Plot:** Risk vs. Return relationship (Sharpe ratio analysis).
 
 **Metrics Displayed:**
 
@@ -290,13 +292,13 @@ DIVIDE(
 **Objective:** Identify outlier price movements and abnormal deviations.
 
 **Key Visuals:**
-- 📊 Scatter Plot: Predicted vs. Actual price — highlighting anomalies.
+- **📊 Scatter Plot:** Predicted vs. Actual price — highlighting anomalies.
 
-- 🧠 Conditional Formatting Table: Flags records where deviation > defined threshold.
+- **🧠 Conditional Formatting Table:** Flags records where deviation > defined threshold.
 
-- ⚡ KPI Alerts: Auto-alert on large deviations (e.g., 5%+ price change).
+- **⚡ KPI Alerts:** Auto-alert on large deviations (e.g., 5%+ price change).
 
-- 📈 Bar Chart: Day-over-day difference highlighting spikes or dips.
+- **📈 Bar Chart:** Day-over-day difference highlighting spikes or dips.
 
 **Metrics Displayed:**
 
