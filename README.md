@@ -164,3 +164,26 @@ streamlit
 plotly
 requests
 ```
+
+📈 Power BI Dashboard Preview
+### 🏦 1. Market Overview
+**Objective:** Provide a snapshot of key market indicators, stock performance, and financial health.
+
+**Key Visuals:**
+- KPI Cards (Market Cap, Daily Volume, Gain/Loss %)
+- Line Chart for closing prices (S&P 500, NASDAQ, Dow Jones)
+- Treemap for sector performance
+- Heatmap for daily/hourly stock changes
+
+**Business Questions:**
+- Which sectors outperform the market?
+- What’s the portfolio return rate today?
+- How do market indices trend weekly/monthly?
+
+**Example DAX:**
+```DAX
+Total Gain/Loss % =
+DIVIDE(SUM('StockData'[Close]) - SUM('StockData'[Open]), SUM('StockData'[Open])) * 100
+```
+
+---
