@@ -150,3 +150,17 @@ EXEC msdb.dbo.sp_start_job N'Refresh_Financial_Predictions_Job';
 - Enable push notifications for key price events.
 
   
+## 🧰 Dependencies
+```
+pandas
+numpy
+yfinance
+scikit-learn
+prophet
+statsmodels
+matplotlib
+sqlalchemy
+streamlit
+plotly
+requests
+```
