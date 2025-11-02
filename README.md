@@ -132,3 +132,9 @@ Predicted Error (RMSE) =
 SQRT(AVERAGEX('ModelResults', POWER('ModelResults'[Actual] - 'ModelResults'[Predicted], 2)))
 
 ```
+
+## 📅 Automation Example (SQL Server Agent)
+```sql
+-- Run daily Power BI data refresh
+EXEC msdb.dbo.sp_start_job N'Refresh_Financial_Predictions_Job';
+```
