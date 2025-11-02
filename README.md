@@ -170,11 +170,19 @@ requests
 **Objective:** Provide a snapshot of key market indicators, stock performance, and financial health.
 
 **Key Visuals:**
-- KPI Cards (Market Cap, Daily Volume, Gain/Loss %)
-- Line Chart for closing prices (S&P 500, NASDAQ, Dow Jones)
-- Treemap for sector performance
-- Heatmap for daily/hourly stock changes
+📊 KPI Cards:
 
+  - Total Market Cap
+
+  - Average Daily Volume
+
+  - Overall Gain/Loss %
+
+📈 Line Chart: Daily closing prices of major indices (S&P 500, NASDAQ, Dow Jones).
+
+💹 Treemap: Sector performance (Technology, Healthcare, Finance, etc.).
+
+🧭 Heatmap: Daily or hourly stock performance changes by sector.
 **Business Questions:**
 - Which sectors outperform the market?
 - What’s the portfolio return rate today?
@@ -184,6 +192,10 @@ requests
 ```DAX
 Total Gain/Loss % =
 DIVIDE(SUM('StockData'[Close]) - SUM('StockData'[Open]), SUM('StockData'[Open])) * 100
+
+Average Volume =
+AVERAGE('StockData'[Volume])
+
 ```
 
 ---
@@ -191,20 +203,42 @@ DIVIDE(SUM('StockData'[Close]) - SUM('StockData'[Open]), SUM('StockData'[Open]))
 **Objective:** Forecast stock prices, index values, or portfolio returns.
 
 **Key Visuals:**
-- Forecast Line Chart (Actual vs Predicted)
-- Confidence Interval Ribbon (Prophet/ARIMA output)
-- Filter by Ticker or Forecast Period
-- Table with Predicted vs Actuals (RMSE, MAPE)
+- 🔁 Forecast Line Chart: Actual vs. Predicted Closing Price over time.
 
-**Metrics:**
+- 📊 Confidence Interval Ribbon: Prophet or ARIMA forecast with upper/lower bounds.
+
+- 🧩 Dynamic Filter: Choose specific tickers or forecast periods (1 day, 7 days, 30 days).
+
+- 📋 Table View: Displays predicted values alongside actuals and errors (RMSE, MAPE).
+
+**Metrics Displayed:**
+
 - Predicted Close Price
-- Forecast Error (RMSE)
-- Confidence Interval ±%
 
-**Example DAX:**
+- Forecast Error (RMSE)
+
+- Next-Day Change %
+
+- Confidence Interval (±%)
+
+**Business Questions Answered:**
+
+- What is the expected price movement tomorrow or next week?
+
+- How accurate is the prediction model?
+
+- Which stocks show stable vs volatile forecasts?
+
+**Example DAX Measures:**
 ```DAX
+Prediction Error (RMSE) =
+SQRT(AVERAGEX('ModelResults',
+    POWER('ModelResults'[Actual] - 'ModelResults'[Predicted], 2)
+))
+
 Forecast Accuracy (%) =
 100 - (AVERAGE('ModelResults'[MAPE]) * 100)
+
 ```
 
 ---
@@ -212,14 +246,43 @@ Forecast Accuracy (%) =
 **Objective:** Assess portfolio risk via volatility and dispersion.
 
 **Key Visuals:**
-- Line Chart for rolling standard deviation
-- Bar Chart comparing sector volatility
-- Variance Gauge and Scatter (Sharpe ratio)
+- 📉 Line Chart: Rolling standard deviation of closing prices.
 
-**Example DAX:**
+- 📊 Bar Chart: Comparison of volatility across stocks/sectors.
+
+- 💡 Variance Gauge: Measures deviation from mean performance.
+
+- 🧾 Scatter Plot: Risk vs. Return relationship (Sharpe ratio analysis).
+
+**Metrics Displayed:**
+
+- Rolling 30-day Volatility
+
+- Standard Deviation
+
+- Beta Coefficient (vs Market Index)
+
+- Sharpe Ratio
+
+**Business Questions Answered:**
+
+- Which stocks carry the highest volatility risk?
+
+- How does my portfolio’s risk compare to the benchmark index?
+
+- What are the potential downside and drawdown scenarios?
+
+**Example DAX Measures:**
 ```DAX
 Volatility (Std Dev) =
 STDEVX.P('StockData', 'StockData'[Close])
+
+Sharpe Ratio =
+DIVIDE(
+    (AVERAGE('StockData'[Return]) - [Risk-Free Rate]),
+    STDEVX.P('StockData', 'StockData'[Return])
+)
+
 ```
 
 ---
@@ -227,33 +290,71 @@ STDEVX.P('StockData', 'StockData'[Close])
 **Objective:** Identify outlier price movements and abnormal deviations.
 
 **Key Visuals:**
-- Scatter Plot (Predicted vs Actual)
-- Conditional Table with deviation threshold
-- KPI Alerts and Bar Charts for spikes/dips
+- 📊 Scatter Plot: Predicted vs. Actual price — highlighting anomalies.
 
-**Example DAX:**
+- 🧠 Conditional Formatting Table: Flags records where deviation > defined threshold.
+
+- ⚡ KPI Alerts: Auto-alert on large deviations (e.g., 5%+ price change).
+
+- 📈 Bar Chart: Day-over-day difference highlighting spikes or dips.
+
+**Metrics Displayed:**
+
+- Outlier Count (Daily)
+
+- % Change from Expected Price
+
+- Alert Frequency
+
+- Anomaly Score (Z-score)
+
+**Business Questions Answered:**
+
+- Which stocks deviated most from forecasted prices?
+
+- Are there abnormal trading volume patterns?
+
+- When did unusual market movements occur?
+
+**Example DAX Measures:**
 ```DAX
 Anomaly Score (Z-Score) =
 DIVIDE(
     'StockData'[Close] - AVERAGE('StockData'[Close]),
     STDEV.P('StockData'[Close])
 )
+
+Outlier Flag =
+IF(ABS([Anomaly Score (Z-Score)]) > 2, "⚠️ Outlier", "Normal")
+
 ```
 
 ---
 ### 🧭 Interactivity & Alerts
-- Slicers: Date, Stock, Sector
-- Drillthrough Pages: Overview → Risk → Forecast
-- Tooltips for contextual KPIs
-- Auto Refresh via Power BI Service + SQL Agent
-- Email Alerts on deviation > ±3% or low accuracy
-
+- **Slicers:** Date range, stock ticker, sector, volatility range
+- **Drillthrough Pages:** From Market Overview → Risk View → Predictive Analytics
+- **Tooltips:** Hover to view additional details (predicted change %, confidence range)
+- **Auto Refresh:** Dashboard refreshes hourly via Power BI Service + SQL Agent job
 ---
+🔔 Alerts & Notifications
+
+- Power BI data alerts trigger emails when:
+
+  - Price deviation > ±3%
+
+  - Volatility exceeds threshold
+
+  - Forecast accuracy drops below 90%
+
 
 ### 📊 Insights Delivered
-- Detects short-term investment opportunities
-- Highlights sector volatility and performance risk
-- AI-driven predictive and anomaly-based intelligence
+
+- Detects short-term opportunities based on AI-driven forecasts.
+
+- Highlights underperforming sectors or high-risk assets in real time.
+
+- Supports proactive decision-making with predictive and anomaly-based intelligence.
+
 
 ## 💡 Key Insight Example
 
