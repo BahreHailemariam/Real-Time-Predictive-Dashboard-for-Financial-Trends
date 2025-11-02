@@ -267,3 +267,20 @@ DIVIDE(
 
 - Deployment — DevOps Engineer
 
+## 📜 License
+
+This project is licensed under the **MIT License**.
+## 🏁 How to Run Locally
+```bash
+# Clone repository
+git clone https://github.com/your-username/real-time-financial-dashboard.git
+cd real-time-financial-dashboard
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run scripts
+python scripts/load_data.py
+python scripts/train_model.py
+streamlit run scripts/app.py
+```
