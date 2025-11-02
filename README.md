@@ -223,3 +223,21 @@ STDEVX.P('StockData', 'StockData'[Close])
 ```
 
 ---
+### 🚨 4. Anomaly Detection
+**Objective:** Identify outlier price movements and abnormal deviations.
+
+**Key Visuals:**
+- Scatter Plot (Predicted vs Actual)
+- Conditional Table with deviation threshold
+- KPI Alerts and Bar Charts for spikes/dips
+
+**Example DAX:**
+```DAX
+Anomaly Score (Z-Score) =
+DIVIDE(
+    'StockData'[Close] - AVERAGE('StockData'[Close]),
+    STDEV.P('StockData'[Close])
+)
+```
+
+---
