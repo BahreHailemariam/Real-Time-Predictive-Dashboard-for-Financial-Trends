@@ -254,3 +254,16 @@ DIVIDE(
 - Detects short-term investment opportunities
 - Highlights sector volatility and performance risk
 - AI-driven predictive and anomaly-based intelligence
+
+## 💡 Key Insight Example
+
+“The Prophet model predicted a 2.4% increase in S&P 500 weekly closing prices with a confidence interval of ±1.1%, correlating strongly (r=0.89) with recent tech sector gains.”
+
+## 👥 Contributors
+
+- Data Engineering & Modeling — Data Science Team
+
+- Dashboard Development — BI Analyst Team
+
+- Deployment — DevOps Engineer
+
