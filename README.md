@@ -33,3 +33,8 @@ This project solves that need with a modular and automated analytics system.
 
 ## 🧠 Project Architecture
 
+Data Source → Data Ingestion (API/Streaming) → Data Cleaning (Python) <br />
+↓<br />
+Feature Engineering → Model Training (ML/Forecasting) → Predictions<br />
+↓<br />
+Power BI Dashboard → Real-Time KPIs & Forecast Visuals → Alerts & Notifications
