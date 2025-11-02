@@ -120,3 +120,15 @@ Real-Time-Financial-Dashboard/
 └── README.md
 ```
 
+
+---
+
+## 🧠 Example DAX Measures (Power BI)
+```DAX
+Total Gain/Loss % = 
+DIVIDE(SUM('StockData'[Close]) - SUM('StockData'[Open]), SUM('StockData'[Open])) * 100
+
+Predicted Error (RMSE) = 
+SQRT(AVERAGEX('ModelResults', POWER('ModelResults'[Actual] - 'ModelResults'[Predicted], 2)))
+
+```
