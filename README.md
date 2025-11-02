@@ -187,3 +187,24 @@ DIVIDE(SUM('StockData'[Close]) - SUM('StockData'[Open]), SUM('StockData'[Open]))
 ```
 
 ---
+### 🔮 2. Predictive Analytics
+**Objective:** Forecast stock prices, index values, or portfolio returns.
+
+**Key Visuals:**
+- Forecast Line Chart (Actual vs Predicted)
+- Confidence Interval Ribbon (Prophet/ARIMA output)
+- Filter by Ticker or Forecast Period
+- Table with Predicted vs Actuals (RMSE, MAPE)
+
+**Metrics:**
+- Predicted Close Price
+- Forecast Error (RMSE)
+- Confidence Interval ±%
+
+**Example DAX:**
+```DAX
+Forecast Accuracy (%) =
+100 - (AVERAGE('ModelResults'[MAPE]) * 100)
+```
+
+---
