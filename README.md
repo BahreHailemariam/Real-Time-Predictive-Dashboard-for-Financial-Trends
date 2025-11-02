@@ -208,3 +208,18 @@ Forecast Accuracy (%) =
 ```
 
 ---
+### ⚠️ 3. Risk & Volatility
+**Objective:** Assess portfolio risk via volatility and dispersion.
+
+**Key Visuals:**
+- Line Chart for rolling standard deviation
+- Bar Chart comparing sector volatility
+- Variance Gauge and Scatter (Sharpe ratio)
+
+**Example DAX:**
+```DAX
+Volatility (Std Dev) =
+STDEVX.P('StockData', 'StockData'[Close])
+```
+
+---
