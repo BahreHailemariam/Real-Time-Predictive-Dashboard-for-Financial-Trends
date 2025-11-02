@@ -138,3 +138,15 @@ SQRT(AVERAGEX('ModelResults', POWER('ModelResults'[Actual] - 'ModelResults'[Pred
 -- Run daily Power BI data refresh
 EXEC msdb.dbo.sp_start_job N'Refresh_Financial_Predictions_Job';
 ```
+
+## 🧠 Future Enhancements
+
+- Integrate sentiment analysis from financial news.
+
+- Add anomaly detection using LSTM models.
+
+- Deploy as a Streamlit or Flask web app.
+
+- Enable push notifications for key price events.
+
+  
