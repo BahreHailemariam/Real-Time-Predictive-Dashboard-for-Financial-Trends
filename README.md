@@ -55,4 +55,34 @@ Power BI Dashboard → Real-Time KPIs & Forecast Visuals → Alerts & Notificati
 
 ---
 
+## 📊 Workflow
+
+### 1. Data Extraction
+- Pull financial data from APIs (e.g., Yahoo Finance, Alpha Vantage).
+- Stream live updates using WebSocket or Kafka.
+
+### 2. Data Cleaning
+- Handle missing prices, adjust stock splits, and convert timestamps.
+- Apply data normalization for volatility indicators.
+
+### 3. Feature Engineering
+- Compute technical indicators: RSI, EMA, MACD, Bollinger Bands.
+- Generate rolling averages and lag features for time-series models.
+
+### 4. Predictive Modeling
+- Apply regression or Prophet models to forecast short-term trends.
+- Evaluate with RMSE, MAPE, and visualize model accuracy.
+
+### 5. Visualization
+- Build Power BI dashboards with dynamic KPIs:
+  - **Stock Performance Overview**
+  - **Price Forecast vs Actual**
+  - **Market Sector Heatmap**
+  - **Volatility and Anomaly Detection**
+
+### 6. Automation
+- Schedule refreshes with SQL Server Agent or Airflow.
+- Send email/SMS alerts for significant market movements.
+
+---
 
