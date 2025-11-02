@@ -38,3 +38,21 @@ Data Source → Data Ingestion (API/Streaming) → Data Cleaning (Python) <br />
 Feature Engineering → Model Training (ML/Forecasting) → Predictions<br />
 ↓<br />
 Power BI Dashboard → Real-Time KPIs & Forecast Visuals → Alerts & Notifications
+
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Tools / Technologies |
+|-------|----------------------|
+| **Data Ingestion** | Python, yfinance, Alpha Vantage API, Kafka (optional) |
+| **Processing & Modeling** | pandas, scikit-learn, statsmodels, Prophet |
+| **Database** | SQL Server / PostgreSQL |
+| **Visualization** | Power BI (Live Connection / DirectQuery) |
+| **Automation** | SQL Server Agent / Airflow for scheduled refresh |
+| **Deployment** | Streamlit / Power BI Service |
+
+---
+
+
