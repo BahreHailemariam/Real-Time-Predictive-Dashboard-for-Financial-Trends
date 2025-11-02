@@ -96,4 +96,27 @@ Power BI Dashboard → Real-Time KPIs & Forecast Visuals → Alerts & Notificati
 ---
 
 ## 📁 Project Structure
+```
+Real-Time-Financial-Dashboard/
+│
+├── data/
+│ ├── raw/
+│ └── processed/
+│
+├── scripts/
+│ ├── load_data.py
+│ ├── clean_data.py
+│ ├── feature_engineering.py
+│ ├── train_model.py
+│ └── app.py
+│
+├── dashboard/
+│ └── PowerBI_Report_Spec.md
+│
+├── docs/
+│ └── Workflow_Spec.md
+│
+├── requirements.txt
+└── README.md
+```
 
